@@ -1,0 +1,532 @@
+## 1. Generative effects
+
+### 1.1
+Find `f : Real -> Real` (not) preserving
+- Order: `sign`; not: `\x -> x**2`.
+- Distance: `\x -> -x+1`; not: `\x -> 2*x`.
+- Addition: `\x -> -2*x+1`; not: `exp`.
+
+### 1.4
+Let  
+`a = [("11", "12"), ("13",), ("21",), ("22", "23")]`  
+and  
+`b = [("11",), ("21",), ("12", "22"), ("13", "23")]`.  
+Then  
+`a v b = [("21",), ("11", "12", "13", "22", "23")]`.
+
+### 1.6
+1. $\{\{*\},\{\circ\}\} \leq \{*,\circ\}$
+2. $\{\{1\},\{2\},\{3\},\{4\}\} \leq \{\{1,2\},\{3\},\{4\}\}$ etc - TODO: tikz
+3. Let $A\leq C$ and $B\leq C$ such that there is no other $C'\leq C$ in the diagram satisfying both $A\leq C'$ and $B\leq C'$. Then $C=A\vee B$. This is the universal property of the coproduct (right?).
+4. True.
+5. The transitive closure of $A\vee B$.
+6. True.
+
+### 1.7
+1. `true v false = true`
+2. `false v true = true`
+3. `true v true = true`
+4. `false v false = false`
+
+### 1.10
+1. True.
+2. False unless you're doing analysis.
+3. True.
+
+### 1.11
+1. $\mathcal{P} B = \{\{\}, \{1\}, \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}$
+2. $\{1\} \cup \{2\} = \{1,2\}$, $B \cup \{\} = B$, $\{1\} \cup \{1,3\} = \{1,3\}$.
+3. $A\times B = \{(h,1), (h,2), (h,3), (2,1), (2,2), (2,3)\}$.
+4. $A \sqcup B = (A\times \{1\}) \sqcup (B\times \{2\}) =$  
+$\{(h,1), (1,1)\} \cup \{(1,2), (2,2), (3,2)\} =$  
+$\{(h,1), (1,1), (1,2), (2,2), (3,2)\}$.
+5. $A\cup B = \{h,1\}\cup \{1,2,3\} = \{h,1,2,3\}$.
+
+### 1.16
+1. Let $A_{p} = A^{\prime}_{q} = A^{\prime}_{r}$. Then $ q = r $, since $ A^{\prime}_{q} \cap A^{\prime}_{r} = A^{\prime}_{q} = A^{\prime}_{r} \neq \{\} $ because $ \{A^{\prime}_{p\prime}\}_{p^{\prime}\in P^{\prime}} $ is a partition.
+2. Let $i p = p^{\prime}$ iff $A_{p} = A^{\prime}_{p^{\prime}} $. We want to show that $\{A^{\prime}\}_{p^{\prime}\in i P}$ is a partition. We check that
+    - $\cup_{i p\in i P} A' = \cup_{p\in P} A = S$.
+    - $B_{i p} \cap B_{i p'} = A_{p} \cap A_{p'} = \delta_{p,p'} = \delta_{i p, i p'}$ since $i$ is injective.  
+    
+    Finally, show that no proper subset of a partition is a partition, so we must have $\{B_q\}_{q\in i P} = \{B_q\}_{q\in Q}$, i.e. $i$ is a bijection and $i P = Q$.
+
+### 1.17
+1. All the diagonal elements $(i,i)$ for $i\in S$ together with $(11,12)$, $(12,11)$, $(22,23)$, and $(23,22)$.
+
+### 1.20
+1. $\sim$ is reflexive, so for every $a\in A$, we always have $a\sim a$. Therefore, every part has at least one element.
+2. Suppose there is an $a\in A_p \cap A_q$ with $p\neq q$. Then both $A_p$ and $A_q$ would be the ($\sim$)-closure of $\{a\}$, but since $\sim$ is transitive they'd have to be the same set. But we know this can't be because $p\neq q$, so it must be that their intersection is empty.
+3. $\cup_{p\in P} A_p \subseteq A$ is obvious because the $A_p$ are subsets of $A$. Let's prove the converse. Observe that every $a\in A$ gets sent to some part $A_{p(a)}$. Now notice that $\cup_{p\in P} A_p = \cup_{a\in A} A_{p(a)}$ and it's done - we're not "losing" any element in between steps.
+
+### 1.24
+1. $A=B=\mathbb{R}$ and $f(x)=\tanh{x}$.
+2. $A=B=\mathbb{R}$ and $f(x)=x\sin{x}$.
+3. The first and fourth ones are functions. The second and third ones aren't.
+4. Let's see:
+    - Neither injective nor surjective.
+    - Not a function because the first element in $A$ is mapped to two elements in $B$.
+    - Not a function because the first element in $A$ has no image - but it is a _partial_ function.
+    - Bijective function.
+
+### 1.25
+Let $a\in A$. What's $f a$. Can't be anything. Therefore, $A = \{\}$.
+
+### 1.26
+TODO Trivial but boring.
+
+### 1.38
+$s(c)=1$, $s(d)=2$, $s(e)=2$, $t(a)=1$, $t(c)=3$, $t(d)=2$, $t(e)=3$
+
+### 1.40
+$1 \leq 2$, $1 \leq 3$, $2\leq 2$, $2\leq 3$.
+
+### 1.41
+TODO There's no definition of Hasse diagram in the text, but I'm guessing they just have to be lattices? IDK
+
+### 1.42
+TODO 12? I see 7... If we label the partitions $\mathbf{0}=\{\{1\},\{2\},\{3\}\}$
+
+### 1.44
+Yup
+
+### 1.46
+Not a total order because some numbers are (relative) primes, e.g. $2$ and $5$ or $4$ and $9$.
+
+### 1.48
+Yes
+
+### 1.51
+- $P(\{\}) \simeq 1 $
+- $P\{1\} \simeq 0 \to 1$
+- $P\{1,2\} \simeq \{\} \to \{1\} \to \{1,2\} \leftarrow \{2\} \leftarrow \{\}$
+
+### 1.53
+- The coarsest partition corresponds to the (unique) function into the singleton set, $f \colon S \to \{*\}$.
+- The finest partition corresponds to the identity function $f = \mathrm{id}_S$.
+
+### 1.55
+For discrete preorders there's no order structure to preserve, so every element in the powerset is an upper set and we just get the powerset ordered by inclusion.
+
+### 1.57
+- Product preorder: $(a,1)\leq (c,2)$, $(a,1)\leq (b,2)$.
+- Upper set preorder: $\{\},\{b\}, \{c\}, \{a,c\}, \{a,b\}, \{b,c\}$ ordered by inclusion. The Hasse diagram has "levels" $\{\}$, $\{\{a\}, \{b\}\}$, $\{\{a,b\}, \{a,c\}, \{b,c\}\}$.
+
+### 1.63
+1. TODO boring but trivial
+2. $0\to 1\to 2\to 3$.
+3. TODO need tikz
+
+### 1.65
+Trivial - basically the identity function but there's an extra element $\{\mathrm{false}\}$ in the codomain with no pre-image.
+
+### 1.66
+1. This is the definition of an upper set with least element $p$.
+2. Let $p, q\in P$ with $p\leq q$. Then $\uparrow q\subseteq \uparrow p$ by transitivity of $\leq$. Since the order in $U P$ is given by inclusion, $\uparrow$ is a monotone map from $P^{op}$.
+3. $p\leq q$ implies $\uparrow q \subseteq \uparrow p$ by (2.). We now show the opposite direction. Any element $q'\in\uparrow q$ is in $\uparrow p$, so $q'\geq p$. This is true for $q'=q$ in particular.
+4. $\uparrow a = P$, $\uparrow b = \{b\}$, $\uparrow c = \{c\}$.
+
+### 1.67
+For any $p\in P$ the only element $p'\in P$ with $p'\leq_P p$ is $p$ itself, and $\leq_Q$ must be reflexive, so for any $f\colon P \to Q$ we must have $f p \leq_Q f p$.
+
+### 1.69
+Let $X=Y=\{1,2,3\}$ and let $f$ swap $1$ and $2$. Let $P=\{\{1,2\},\{3\}\}$ and $Q=\{\{1\},\{2,3\}\}$. Then $f^{\*} P = P$ and $f^{\*} Q = \{\{1\}, \{2,3\}\}$.
+
+### 1.71
+- The identity function is monotone by reflexivity.
+- Just chain the two implications from monotonicity of $f$ and $g$.
+
+### 1.73
+A dagger preorder is just an equivalence relation. "Skeletizing" means quotienting by it, so we end up with a set of parts that are not related by the preorder, i.e. a discrete preorder.
+
+### 1.77
+$\mathrm{Prt} S$ is ordered by coarseness, so if $a\leq_{\mathrm{Prt}} b$ it can't be that $1$ and $2$ are in the same part in $b$ but not in $a$, so $\Phi a \leq_{\mathbb{B}} \Phi b$.
+
+### 1.79
+TODO
+
+### 1.80
+1. Because $1/(n+1) > 0$ for all $n\in \mathbb{N}$.
+2. Because there's no $\epsilon$ such that $0 < \epsilon < 1/(n+1)$ for all $n$, since for a given $\epsilon$ we can always take $n>(1-\epsilon)/\epsilon$.
+
+### 1.85
+1. Any candidate meet $m\neq p$ must be $m\leq p$. If we also want $m$ to be greater than any $m'\leq p$, we must have $p\leq m$, so $m\simeq p$.
+2. If $P$ is a partial order, there are no elements order-equivalent to $p$ other than $p$ itself.
+3. The same argument works for joins swapping the $\leq$'s for $\geq$'s.
+
+### 1.90
+The meet is the greatest common divisor and the join is the least common multiple.
+
+### 1.98
+Let's check $\lfloor - / 3 \rfloor$:
+- $f(x) = 3x \leq y \implies x \leq y/3 \implies x \leq \lfloor y/3 \rfloor = g(y)$.
+- $x \leq g(y) = \lfloor y/3 \rfloor \implies 3x = f(x) \leq 3 \lfloor y/3 \rfloor \leq y$.
+
+### 1.99
+1. Just look at how the arrows do not cross.
+2. It fails because $g 1 = 2 \leq 2$ but $f 2 = 2 \geq 1$ -- RIGHT? DOUBLE CHECK THIS
+
+### 1.101
+TODO - you really want to get back to this because you don't understand it
+
+### 1.103
+TODO boooring might do it in python later
+
+### 1.105
+TODO boooring might do it in python later
+
+### 1.106
+TODO boooring might do it in python later
+
+### 1.109
+1. Set $p = g q$. In particular, we have $p \leq g q$. By the adjunction, this implies $f p \leq q$, which together with the definition of $p$ implies $f g q \leq q$.
+2. Suppose $p \leq g q$. By monotonicity of $f$, we have $g f p \leq g q$ and by assumption $p \leq g f p$, so $p \leq g q$.
+
+### 1.110
+1. Not sure where to begin
+2. No clue
+
+### 1.112
+Let $j = \bigwedge A$. By monotonicity, $f A \leq f j$. We want to show that any $b$ satisfying $f A \leq b$ is necessarily greater than $f j$. By adjunction and the universal property of $j$, we have $A \leq j \leq g b$. Finally, taking the adjunction in the other direction, we have $f j \leq b$.
+
+### 1.114
+I'd rather check the 7 things implied by the characterization given in Proposition 1.107. Both $f;g$ and $g;f$ are the identity when restricted to $\{1,2,4\}$, they're monotonic - that's 6 things. Finally, $3.9 \leq 4 = f;g (3.9)$.
+
+### 1.118
+See `problem118` in `1/adjoints.py`.
+
+### 1.119
+1. This is the content of Proposition 1.107.
+2. $f;g p \leq f;g;f;g p$ by setting $p\mapsto f;g\,p$ in 1. For the converse, apply $g$ on both sides of $p\leq f;g p$, so we have $g p \leq g;f;g p$ by monotonicity of $g$, but also $g;f;g p \leq g p$ by $f\models g$ and Proposition 1.107. Now apply $f$ to get $f;g;f;g p \leq f;g p$ by monotonicity of $f$.
+
+### 1.124
+$\mathbf{Rel}(\{1,2\}) \simeq \mathcal{P} ([2]\times [2]) \simeq \mathcal{P} [4]$. The Hasse diagram is just the lattice with $\{\}$ at the bottom, $\{1,2,3,4\}$ at the top, and three "intermediate floors" containing 4 singletons, 6 2-element sets, and 4 3-element sets, ordered by inclusion.
+
+### 1.125
+1. Let's use the total order inherited from $\mathbb{N}$, $1\leq 2\leq 3$. Then $U(\leq) = \{(1,2), (1,2), (1,3), (2,2), (2,3), (3,3)\}$.
+2. We may take $Q = \Delta S = \{(1,1), (2,2), (3,3)\}$ and $Q' = S\times S$.
+3. $\mathrm{Cl}(Q)$ is the discrete preorder on $S$. $\mathrm{Cl}(Q)\subseteq \leq$ since $\leq$ is a preorder and therefore reflexive.
+4. $\mathrm{Cl}(Q')=S\times S$ and $\mathrm{Cl}(Q') \not\subseteq \leq$ since $(3,2) \in S\times S$ but $3\not\leq 2$.
+
+## 2. Resource theories: Monoidal preorders and enrichment
+
+### 2.5
+The obstruction is the negative half of $\mathbb{R}$. For instance, we have $-1\leq 1$ and $-2\leq 2$ but $(-1)\times(-2) = 4 \not\leq 1\times 2 = 2$. $(\mathbb{R}^{+}, \times)$ would work, because it's a commutative monoid.
+
+### 2.8
+Let's see
+1. $x\times y$ better be equal to $x\times y$
+2. $x\times e = e \times x = x$ by monoidal unital axiom.
+3. Monoids are associative by definition.
+4. We imposed commutativity.
+
+### 2.20
+1. $t+u \leq (v+w)+u = v+(w+u) \leq v+(x+z) = (v+x)+z \leq y + z$.
+2. Reflexivity together with monotonicity of $+$ is used in all inequalities involving the same object on both sides, i.e. something of the form $x+y \leq x'+y$ or its symmetric. By transitivity, we have that the left-most term $t+u$ must be $\leq$ than the right-most term $y+z$.
+3. No wires cross.
+
+### 2.21
+Two allowed chemical reactions can happen in parallel. Adding literally nothing to the reactants or the products changes nothing. Grouping or permuting compounds changes nothing, so we get associativity and commutativity.
+
+### 2.31
+Follows from the fact that $(\mathbb{N}, \times, 1)$ is a commutative monoid.
+
+### 2.33
+We have that $1|1$ and $1|2$, but $(1+1)=2\not{|}\,(1+2)=3$.
+
+### 2.34
+1. $\mathrm{min}(x,x)$ is just $x$ and $\mathrm{min}(x,y)$ is y if $x\leq y$ and $y\not{\leq}x$, otherwise it's $y$.
+2. Let's see
+    - If $x\leq x'$ and $y\leq y'$, then $\mathrm{min}(x,y) \leq \mathrm{min}(x',y')$.
+    - $\mathrm{min}(x,Y) = \mathrm{min}(Y,x) = x$.
+    - $\mathrm{min}$ is associative and commutative.
+
+### 2.35
+Let's see
+    - If $A \subseteq B$ and $C \subseteq D$, then the intersection $A \cap C$ sits in $B \cap D$ since $A \cap C = (A \cap B) \cap (C \cap D) = (A \cap C) \cap (B \cap D)$.
+    - $A \cap S = S \cap A = A$ for any $A \subseteq S$.
+    - Intersection is associative and commutative.
+
+### 2.36
+Take conjunction $\wedge$ as monoidal functor and $\mathrm{True}$ as monoidal unit. Let's check the axioms:
+    - If $p \implies q$ and $p' \implies q'$, then $p \wedge p' \implies q \wedge q'$.
+    - $p \wedge \mathrm{True} \iff p$.
+    - $\wedge$ is commutative and associative.
+
+### 2.39
+Boring and obvious, meh
+
+### 2.40
+They're the same? You just flip $\leq$ for $\geq$, right?
+
+### 2.43
+1. Let's see
+    - $g$ is monotonic since $\mathrm{false} \leq \mathrm{true}$ and $0 \geq \infty$.
+    - $g(\mathrm{true}) = 0 \geq 0$.
+    - Let's write down some tables
+        
+| $g(b\wedge b')$ | 0 | 1 |
+| ---: | ---: | ---: |
+| 0 | $\infty$ | $\infty$ |
+| 1 | $\infty$ | 0 |
+
+| $g(b) + g(b')$ | 0 | 1 |
+| ---: | ---: | ---: |
+| 0 | $\infty$ | $\infty$ |
+| 1 | $\infty$ | 0 |
+
+2. The previous tables together with $g(\mathrm{true}) = 0$ show that $g$ is strict.
+
+### 2.44
+Yes to all, they're easy to check.
+
+### 2.45
+1. Yes, see exercise # whatever.
+2. Yes, take the exponential map.
+3. No, because negative numbers break everything.
+
+### 2.50
+1. Starting with a preorder, reflexivity gets you existence of identities and transitivity gets you associativity.
+2. Same but in reverse.
+
+### 2.52
+`d(Spain,US) ~ d(Barcelona, NY) << d(US,Spain) ~ d(SF,Galicia)`
+
+### 2.55
+There is a family of oplax monoidal functors from $\mathbf{Cost'}=([0,\infty), \geq, 0, +)$ to $\mathbf{Cost'}=([0,\infty], \geq, 0, +)$: for every $K\in [0,\infty)$, take $F_K x = x$ if $K\geq x$ and $F_K x = \infty$ otherwise. This gives a recipe to construct another family of functors from a $\mathbf{Cost'}$-enriched category to a $\mathbf{Cost}$-enriched category: just take the identity on objects and apply $F_K$ on the morphisms. This is related to (the same as?) as "changing the base of enrichment", which is defined in Construction 2.64.
+
+### 2.58
+Trivial, a bit tedious.
+
+### 2.60
+Trivial, a bit tedious.
+
+### 2.61
+I want to interpret `false` as there being no arrows, `maybe` as there being only Kleisli arrows wrt the `Maybe` monad, and `true` as there being arrows. Taking the `min` says that the arrows that can exist between `x` and `z` going through `y` are constrained by the "weakest" kind of arrow between `x` and `y` and `y` and `z`. However, notice that nothing prevents an arrow `x -> z` even in the absence of `x -> y` and `y -> z` arrows - this is how you should read `min(C(x,y), C(y,z)) => True`.
+
+### 2.62
+TODO: maybe implement this
+
+### 2.63
+Not sure if I'm misunderstanding this problem. On the one hand, the definition of $d(x,y) = \max_{p\in\mathrm{Paths}(x,y)} \min_{i\in\{1,\dots,\mathrm{length}\,p\}} w_i$ is patently weird. On the other hand, by the identity axiom, we should have $\infty \leq d(x,x)$ for all vertices $x$, which is implied by the definition thanks to the $\max$ over _all_ paths, which includes infinite ones - just keep bouncing back and forth between nodes. But this means every node is infinitely far from any other node, including itself. Which is plain strange :_shrug\_emoji_:.
+
+### 2.67
+The only distance equal to zero in the Lawvere metric space is `d(Boston, US)`, so the preorder has `Boston <= US` and Spain is an isolated point.
+
+### 2.68
+1. For any $K\in\mathbb{R}$, we can set $g_K(x)=\mathrm{False}$ if $x>K$ and True otherwise.
+2. The Lawvere metric space $X \to_{1} Y \to_{3} Z$ is mapped to a discrete preorder by $f$ and to the preorder $\{X, Y\leq Z\}$ by $g_2$.
+
+### 2.73
+1. The skeletal condition implies that the distance between two objects is zero, they must be the same object, and the dagger condition implies that distances are symmetric.
+2. The skeletal condition quotients out isomorphic objects, while the dagger condition imposes antisymmetry. For preorders, this means that the resulting category will allow objects to appear only once and that there will be no relations between them, so we end up with a set - just a bunch of objects, no structure. For Cost-categories, the conditions turn the category into a(n extended) metric space.
+
+### 2.75
+1. $I_{X\times Y} = I_X \otimes I_Y \leq X(x,x)\otimes Y(y,y) = (X\times Y)((x,y),(x,y))$.
+2. Same trick as above.
+3. When translating the $\times$ into $\otimes$ on the left hand side of the expression in 2. the 2nd and 3rd factor need to be swapped in order to make use of monotonicity of the enriching functor on $X$ and $Y$ separately.
+
+### 2.78
+We get the Manhattan or $p=1$ distance $d((x,y),(x',y')) = d(x,x') + d(y,y') = |x-x'| + |y-y'|= 6 + 2 = 8$.
+
+### 2.82
+1. Parallel composition of string diagrams `w -- <= -- w'` and `v -- <= -- v` gives `w x v -- <= w' x v`.
+2. If any of the inequalities in (2.80) is false, there's nothing to check. Assume both are true. Then we can modify the string diagram `a x v <= w` to insert `a <= (v -o w)` along the upper wire, resulting in `(v -o w) x v <= w`.
+3. Take $(v \multimap -) \otimes v$ on both sides of $w\leq w'$. The inequality is respected by monotonicity shown in (2.). Now the parallel composition can be broken into $v\leq v$ and $v\multimap w \leq v \multimap w'$.
+4. (2.80) together with monotonicity are the definition of a Galois connection i.e. an adjunction between preorders.
+
+### 2.84
+Remember that both $\leq$ and $\multimap$ should be read as $\implies$ - I'm sure there is a way to make this rigurous, something something internal logic blabla. With this in mind $a\wedge b \leq c \iff a \leq (b\multimap c)$ just says that an implication is the curried form of a product: $a\wedge b \implies c \iff a \implies (b\implies c)$. TL;DR: define $a\multimap b = \neg a \vee b$ which is secretely just $a\implies b$.
+
+### 2.92
+1. In Bool $0\leq b$ for any $b$, so $0 = \mathrm{false}$. In Cost it's the same but with the order reversed, so $0=\infty$.
+2. In Bool the join is the logical or operation. In Cost, it's the infimum.
+
+### 2.93
+We just need to show that $\implies$ is adjoint to $\wedge$ and $\vee$ is a good candidate for join operation. This has been done in previous exercises.
+
+### 2.94
+Define $A\multimap B = (S \setminus A) \cup B$ and $A \vee B = A \cup B$. This should work because it does in Bool.
+
+### 2.103
+$$
+M_{\mathbf{Bool}} = \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+    \end{pmatrix}
+$$
+and
+$$
+M_{\mathbf{Cost}} = \begin{pmatrix}
+    0 & \infty \\
+    \infty & 0
+    \end{pmatrix}
+$$
+
+### 2.104
+1. We first need to show that $0 \otimes v \simeq 0$ and $0 \vee v = v$ for all $v\in V$. The fact that $0\leq 0\otimes v$ is a consequence of $0\leq x$ for any $x\in V$ since it's the join of the empty set (see example 2.91). The converse $0\otimes v \leq 0$ is true iff $0 \leq (x\multimap 0)$ by adjointness, and since $x\multimap 0$ is an element of $V$ because $V$ is closed, this must be true as well, so $0\simeq 0\otimes v$. To show $0 \vee v = v$ just notice that since $0\leq x$ for any $x$, the join conditions simply imply that $v\leq 0\vee v \leq x$ for any $v\leq x$, so taking $x\simeq v$ in particular shows that $0\vee v \simeq v$. Finally, we write $(I_X \dot M)(x,y) = \bigvee_{x'\in X} I_X(x,x') \otimes M(x',y) = (\bigvee_{x\neq x'} 0) \vee (\bigvee_{x=x'} M(x',y)) = M(x,y)$, where we have used the fact that the join distributes over the tensor product.
+
+2. We need to use (2.87) twice and the fact that two successive join operations commute, meaning that $\bigvee_{a\in A} \bigvee_{b\in B} = \bigvee_{a\in A} \bigvee_{b\in B}$. Pretty sure we can prove this using Fubini theorem for coends, but that sounds like _extreme_ overkill. Maybe have a look at [Fosco](https://arxiv.org/pdf/1501.02503.pdf), section 1.3.
+
+### 2.105
+I need to go back to this because I misunderstood the definition of $M$ as I suspected - so TODO
+
+## Databases: Categories, functors, and universal constructions
+
+### 3.3
+5 and 5, so each arrow is a non-ID column.
+
+### 3.9
+Since the points have no internal structure, we get unitality (walking a self-loop amounts to nothing). Path concatenation can be parenthesized however we want, so we get associativity.
+
+### 3.10
+Trivial, boring.
+
+### 3.12
+1. Single object, just the identity.
+2. Empty, no objects or morphisms.
+3. There are $n$ identities and $n-1$ generating morphisms. A morphism is univocally determined by its source and target, and the target cannot be to the left of the source, so we get $n(n+1)/2$ morphisms.
+
+### 3.15
+$m+n$
+
+### 3.16
+1. 4 identites, 4 (non-identity) generating morphisms, and 2 composites $f;h$ and $g;i$.
+2. The two composites.
+3. $f$ and $h$.
+
+### 3.17
+Same 4 identities, same 4 generating morphisms and now the composites are the same and equal to $j$ - so 9 in total.
+
+### 3.19
+The equation says there are only 4 classes: $\{z, s, s;s, s;s;s\}$. Any morphism $s^n$ with $n\geq 4$ would be $s;s$ if $n$ is even and $s;s;s$ if odd.
+
+### 3.21
+1. $f=g$
+2. $f=id$
+3. $f;h=g;i$
+4. None
+
+### 3.22
+It's the most boring preorder possible: single element satisfying $x\leq x$.
+
+### 3.25
+Three constants, three order-preserving embeddings, and three non-order-preserving embeddings.
+
+### 3.30
+1. $f^{-1} 1 = b$, $f^{-1} 2 = a$, $f^{-1} 3 = c$.
+2. $3^3 = 27$
+
+### 3.31
+Composing identity with itself yields the identity.
+
+### 3.32
+1. No, because there are no negative numbers and thus no inverses.
+2. Yes, it's $\mathbb{Z}_2$.
+
+### 3.33
+Having isomorphisms would impose equations between morphisms, breaking assumption that the category is free.
+
+### 3.37
+Looking at exercise (3.25), there are 9 possible candidates. The three constants and the three order-preserving maps fit the bill because we can draw arrows as needed, but the three non-monotone maps don't work because there'd be no image for the arrow $f_1$.
+
+### 3.39
+The identities and generating morphisms go to the obvious places, and $F f';h' = F g';i' = f;h = g;i$.
+
+### 3.40
+$F$ and $G$ are the identity on objects but $F$ sends the only morphism in $C$ to the upper morphism in $D$ and $G$ sends it to the lower one.
+
+### 3.43
+1. Any category is a graph plus a bunch of equations. You just need the identity functor to be the identity on objects and sending every morphism to itself will respect the equations by functoriality.
+2. Just do function composition on objects and hom-sets separately.
+3. Again, using function composition on objects and hom-sets separately, we show unitality and associativity.
+
+### 3.45
+Any set has an identity morphism on itself, so that's it.
+
+### 3.48
+1. Examples of functions that are their own inverse:
+    - $F z = \mathbb{Z}$ and $F s = (-1)*$.
+    - $F z = \mathrm{List}[a]$ for some type $a$ and $F s = \mathrm{reverse}$.
+2. Example of equalizer: let $F b$ be the set of binary strings; and let $Fg$ count the number of ones in the string, and $Fh$ be the length function. Then $a$ is the set of binary strings that contain no zeroes and $Ff$ is the canonical embedding of $Fa$ in $Fb$.
+
+### 3.55
+1. Literally that. Define $\gamma = \alpha;\beta$ to be $\gamma_a = \alpha_a;\beta_a$ for all $a \in \mathrm{Ob}(\mathcal{C})$. Naturality in $\alpha$ and $\beta$ implies naturality in $\gamma$ by pasting commutative squares. Associativity is inherited from associativity of morphisms in the category $F \mathcal{C}$.
+2. Again, we do it component-wise: $id_a \colon F a \to F a$ is just the identity morphism on $F a$. Unitality is inherited from unitality of morphisms in the category $F\mathcal{C}$.
+
+### 3.58
+1. The components of any natural transformation $F\to G$ is a morphism in $\mathcal{P}$. Since any two morphisms in a preorder are the same, there can be no more than one natural transformation between any two functors.
+2. Counter-example. Let:
+    - $\mathcal{P} = \mathbf{Bool}$
+    - $\mathcal{C}$ be the free category with
+        - two objects $a$ and $b$
+        - two parallel morphisms $F\leq, G\leq \colon a\to b$
+        - two parallel morphisms $\alpha_a, \beta_a\colon a \to a$, and
+        - two parallel morphisms $\alpha_b, \beta_b\colon b \to b$.
+    - Then $\alpha$ and $\beta$ are two different natural transformations between $F$ and $G$.
+
+### 3.62
+The vertices are:
+
+| Vertex |
+| :--- |
+| Employee |
+| Department |
+| string |
+
+and the arrows are:
+
+| Arrow | source | target |
+| :--- | :--- | :--- |
+| Mngr | Employee | Employee |
+| WorksIn | Employee | Department |
+| Secr | Department | Employee |
+| FName | Employee | string |
+| DName | Department | string |
+
+### 3.64
+1. Naturality imposes $\alpha_{Vertex} G s = H s \alpha_{Arrow}$ and $\alpha_{Vertex} G t = H t \alpha_{Arrow}$. Plugging $b$ in the left hand side of the first equation, we get $\alpha_{Vertex} 2 = H s \alpha_{Arrow} b$. From plugging $a$ into the second one, we know that $\alpha_{Vertex} 2 = 5$, so we must have $\alpha_{Arrow} b = e$, since this is the only arrow in $H$ with source $5$.
+2. I drew it.
+3. It does.
+
+### 3.67
+We get the same graph with the arrows reversed. Note that this no longer defines a deterministic machine, because the transition function defined in $I$ not injective.
+
+### 3.73
+1. $(f, id_B) = (x,b) \mapsto (f(x),b)$
+2. $\lambda b. x \mapsto \lambda b. f(x)$
+3. $p(3) = \lambda x. x+3$
+
+### 3.76
+Every object to the only possible object; every morphism to the identity.
+
+### 3.78
+We have one arrow per email sent, labeled by its ID, with source sender and target receiver.
+
+### 3.81
+From the definition of a preorder category, $c\leq z$ in $\mathcal{P}$ iff $c\to z$ in $\mathcal{C}$. Moreover, the morphism is unique since preorder categories are thin.
+
+### 3.82
+$\mathbf{1}$, the category with a single object and a single morphism.
+
+### 3.83
+The free category with two objects and two parallel arrows between them.
+
+### 3.88
+Replace all $\leq$ for $\to$ in the definition of meet and use the fact that preorders are thin.
+
+### 3.90
+1. Products of identities.
+2. Because it's component-wise associative.
+3. It's isomorphic to $\mathbf{2}$ - meaning there's a pair of functors between them that compose to the identity in both directions.
+4. We get the preorder where $(a,b)\leq (a',b')$ iff $a\leq_P a'$ and $b\leq_Q b'$.
+
+### 3.97
+The definition reduces to the case of products by "forgetting" any morphisms in the diagram.
+
+### 3.98
+The diagram is its own limit since the projection is the identity?
+
+### 3.101
+Same on objects, morphisms flip source and target.
+
+## Collaborative design: Profunctors, categorification, and monoidal categories
