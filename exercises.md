@@ -530,3 +530,29 @@ The diagram is its own limit since the projection is the identity?
 Same on objects, morphisms flip source and target.
 
 ## Collaborative design: Profunctors, categorification, and monoidal categories
+
+### 4.4
+1. (cat, nothing) $\leq$ (-, this book)
+2. If $x$ can be explained given $y$ and $x'$ is "simpler" than $x$ ($x'\leq x$) while $y'$ gives "more info" than $y$ ($y\leq y'$), then $(x,y)\leq (x',y')$ in $X^{op}\times Y$, meaning that $x'$ can be explained with $y'$.
+
+### 4.7
+Just check each case. Boring.
+
+### 4.9
+Follows from the definition of functor enriched in a quantale.
+
+### 4.10
+4.8 is more general, because $X$ and $Y$ aren't just preorders but categories enriched in $\mathbb{Bool}$, so we can do boolean algebra with their morphisms, i.e. there's a closed monoidal structure on them.
+
+### 4.12
+| $\Phi$ | a | b | c | d | e |
+|---|---|---|---|---|---|
+| N | true | false | true | false | true |
+| E | true | true | true | true | true |
+| W | true | false | true | false | true |
+| S | true | true | true | true | true |
+
+### 4.15
+Boring if you did the previous one and can add small integers.
+
+### 
