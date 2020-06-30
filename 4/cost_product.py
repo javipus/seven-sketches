@@ -7,10 +7,138 @@ import pandas as pd
 import networkx as nx
 
 # TODO
-# class Quantale
-# class Profunctor
-#   def __mult__
+# testing
+class Obj:
 
+    def __init__(self, obj):
+        if isinstance(obj, Obj):
+            self = obj
+        if isinstance(obj, (list, set)):
+            self._items = map(self.__init__, obj)
+        if not isinstance(obj, collections.Hashable):
+            raise TypeError('Objects need to be hashable')
+        self._items = obj
+
+class Arrow:
+
+    def __init__(self, src, tgt, data=None):
+        self.src = Obj(src)
+        self.tgt = Obj(tgt)
+        self.data = data # enrichment
+
+class Category:
+
+    def __init__(self, obj, arr):
+        self.obj = obj
+        self.arr = arr # arrows can have any type -> enrichment
+
+    def _from_graph(self, g):
+        self.obj = g.nodes
+        self.arr = g.edges
+
+    @property
+    def obj(self):
+        return self._obj
+
+    @obj.setter
+    def obj(self, new):
+        # TODO
+        self._obj = Obj(new)
+
+    @property
+    def arr(self):
+        return self._arr
+
+    @arr.setter
+    def arr(self, new):
+        # TODO
+        self._arr = new
+
+class Functor: # TODO
+    pass
+class Profunctor(Functor):
+
+    def __init__(self, p, src=None, tgt=None):
+        self._src = src or list(range(p.shape[0]))
+        self._tgt = tgt or list(range(p.shape[1]))
+        self.p = pd.DataFrame(self._wrap(p), index=self._src, columns=self._tgt)
+
+    def __mul__(self, other):
+        pass
+
+    def _wrap(self, other):
+        pass
+class Quantale:
+
+    def __init__(self, *args, **kwds):
+        self._args = args
+        self._kwds = kwds
+    def __leq__(self, other):pass
+    def __mult__(self, other): pass
+    @property
+    def unit(self): pass
+    def hom(self): pass
+    def __repr__(self):
+        return 'Quantale {} {}'.format(self._args, self._kwds)
+    def __str__(self): return self.__repr__()
+class Cost(Quantale):
+
+    def __init__(self, x):
+        self.x = x
+
+    def __eq__(self, other):
+        return (self.x == self._wrap(other).x)
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __lt__(self, other):
+        return (self.x < self._wrap(other).x)
+
+    def __gt__(self, other):
+        return not self.__leq__(other)
+
+    def __le__(self, other):
+        return self.__eq__(other) or self.__lt__(other)
+
+    def __ge__(self, other):
+        return self.__eq__(other) or self.__gt__(other)
+
+    def __mul__(self, other):
+        return Cost(self.x + self._wrap(other).x)
+
+    def __pow__(self, n):
+        return reduce(lambda x,y: x*y, [self.x]*n)
+
+    def __add__(self, other):
+        return self.join(other)
+
+    @property
+    def unit(self):
+        return Cost(np.inf)
+
+    @property
+    def zero(self):
+        return Cost(0)
+
+    def hom(self, other):
+        return Cost(self._wrap(other).x - self.x)
+
+    def join(self, other):
+        return Cost(min(self.x, self._wrap(other).x))
+
+    def _wrap(self, other):
+        if isinstance(other, Cost):
+            return other
+        return Cost(other)
+
+    def __repr__(self):
+        return 'Cost {}'.format(self.x)
+
+    def __str__(self):
+        return self.__repr__()
+
+    
 def one_step_distance_matrix(g):
     #n = g.number_of_nodes()
     v = list(g.nodes)
