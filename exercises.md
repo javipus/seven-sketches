@@ -555,4 +555,65 @@ Follows from the definition of functor enriched in a quantale.
 ### 4.15
 Boring if you did the previous one and can add small integers.
 
-### 
+### 4.17
+See `4/cost_product.py`
+
+### 4.18
+It's valid but I don't understand why they're not using $T^{op}$... and it means that producing a movie that's both good-natured and funny would cost more than $1M.
+
+### 4.22
+Boring, I'll do it later with my python implementation.
+
+### 4.26
+Trivial, just do the identity on objects.
+
+### 4.30
+1. Let's see
+   - Definition of monoidal unit as identity for $\otimes$
+   - Unitality and (lax monoida) functoriality of $\otimes$
+   - Definition of join in a poset
+   - Definition of matrix multiplication in a quantale
+2. The first one because true is the top element in Bool; the second one because if $true \wedge b \leq \bigvee_{p} (b'(p) \wedge b) = b \wedge \bigvee_{p} b'(p)$ so the lhs equals the rhs regardless of the value of $b$.
+3. So
+    - Monoidal unit is the identity for $\otimes$
+    - Unitality and (lax monoida) functoriality of $\otimes$
+    - Associativity and (lax monoidal) functoriality of $\otimes$
+
+### 4.31
+We use that
+- $\otimes$ distributes over $\vee$ (proposition 2.87),
+- $\otimes$ is associative, and
+- joins over different collections of objects commute (do I need the skeletal property here?).
+
+### 4.36
+$\hat{\mathrm{id}}(p,p') = P(\mathrm{id} p, p') = P(p,p') = U_P(p,p')$
+
+### 4.38
+$\breve{+} (d,a,b,c) = \mathrm{true}$ iff $d \leq a+b+c$.
+
+### 4.41
+1. Just apply definition 4.34.
+2. The identity is adjoint to itself since $id;id=id$.
+
+### 4.44
+Tedious, will implement it later # TODO
+
+### 4.48
+Obvious, just replace $\leq$ with $\to$.
+
+### 4.50
+1. $g(5,3) = (false, 2)$
+2. $g(3,5) = (true, -2)$
+3. $h(5, true) = 5$
+4. $h(-5, true) = -5$
+5. $h(-5, false) = 6$
+6. $q(-2,3) = (2,-13)$
+7. $q(2,3) = (-1, 7)$
+
+### 4.53
+There are two main differences:
+1. Definition 3.6 uses the language of ZF set theory and, in particular, uses the symbol $\in$. This is to be replaced by an arrow from the monoidal unit in category theory. Since in set we have that $S \simeq S^{1}$, i.e. an arrow from the singleton set to another set $S$ simply amounts to picking an element of $S$, this is a distinction without a difference.
+2. This differences is more important: Unitality and associativity are strict in definition 3.6, but only hold up to isomorphism in definition 4.51. In particular, we need to make use of the left and right unitors and the associator in $\mathcal{V}$ to make sense of composition and identities. However, by Mac Lane's coherence theorem we can always think about $\mathcal{V}$ as being strict, so :shrug_emoji:.
+
+### 4.54
+Identity elements in Lawvere metric spaces state the fact that $0\geq d(x,x)$ i.e. the distance from any point to itself is zero.
