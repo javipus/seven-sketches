@@ -617,3 +617,66 @@ There are two main differences:
 
 ### 4.54
 Identity elements in Lawvere metric spaces state the fact that $0\geq d(x,x)$ i.e. the distance from any point to itself is zero.
+
+### 4.62
+1. $\eta_A (\emptyset) = \{\{(1,1), (1,2)\}, \{(2,1), (2,2)\}, \{(3,1), (3,2)\}\}$
+2. $\epsilon_A x = \emptyset$
+3. TODO - i don't really understand this example for the same reason I didn't understand it in the GoI paper; I need to work out the details re: transitive closure
+
+### 4.64
+"If I can get $x$ from $x'$ and $y$ from $y'$, then I can get $(x,y)$ from $(x',y')$"
+
+### 4.65
+They're inherited from the monoidal structure in $\mathcal{V}$. More concretely, they can be defined in terms of the left and right unitors of $\mathcal{V}$.
+
+### 4.66
+TODO: I'm getting confused with the type signature of profunctors because on the one hand they're $1 \to X^{op}\times X$ but on the other that's secretely $1\times X^{op} \times X \to V$.
+
+## Signal flow graphs: Props, presentations, and proofs
+
+### 5.5
+1. Let $f 1 = 1$, $f 2 = f 3 = 2$, $g 1 = 1$, and $g 2 = 4$.
+2. $(f+g) x = f x$ if $x\leq 3$ and $(f+g) x = 2 + g x$ if $x>3$.
+3. Just function composition.
+4. $f x = x$.
+5. $\sigma_{m,n} (x, i) = (x, (i+1)\%2)$
+
+### 5.9
+1. $\mathbf{Bij}$ but quotienting out by bijection, so you get a discrete poset.
+2. The skeleton (modding out permutations) of $(\mathbf{FinSet}, +)$ gives rise to the additive, totally ordered monoid $(\mathbb{N}\cup \{0\}, 0, +, \leq)$.
+3. $(\mathbb{N}, 1, \times)$ with a morphism $f \colon n \to m$ iff $n$ divides $m$.
+
+### 5.10
+Let's take $\mathbf{Rel}$
+1. $\mathbf{Rel}(m,n) = \mathcal{P}(m\times n)$
+2. $\mathbf{Rel}(n,n) = \Delta n = \{(i,i)\colon i \in \{1,\dots,n\}\}$
+3. $\sigma_{m,n} (x, i) = (x, (i+1)\%2)$ where $i\in \{0,1\}$.
+4. See example 5.8
+5. See footnote 3
+
+### 5.16
+Just stick the outputs of the first graph into the inputs of the second.
+
+### 5.18
+Just copy the diagram and put it in parallel.
+
+### 5.20
+1. $R x y \implies x\leq_P y$ so if this implies $f x \leq_Q f y$, then $f$ is monotone.
+2. $R x y \implies x\leq_P y$ so if $f$ is monotone, then $f x \leq_Q f y$.
+
+### 5.21
+1. Yes, because $g a R g b \implies g a \leq_P g b$.
+2. No, because the implication in 1. only goes one way. In particular, $g a$ and $g b$ may not be related by $R$ but become related once we take its reflexive, transitive, closure.
+
+### 5.23
+1. $\mathrm{dom} (f\colon x \to y) = x$ and $\mathrm{cod} (f\colon x \to y) = y$
+2. Any functor needs to specify two pieces of data: how it acts on objects ($f$) and how it acts on morphisms ($g$), with the extra constraint that $\mathrm{dom} (g(a)) = f \mathrm{dom} a$ and similarly for the codomain. So this is just that statement together with $(s,t)$ being the (co)domain functions in $\mathrm{Free} G$.
+3. Yes, perhaps one with infinitely many vertices. Not sure what the adjunction is.
+
+### 5.24
+1. They're strings on the one-letter alphabet $A$.
+2. So it's isomorphic to the additive monoid $\mathbb{N}\cup \{0\}$.
+3. Binary strings.
+
+### 5.28
+Intuitively, Free(G) has functions of "all possible arities"... so what?
