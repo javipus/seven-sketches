@@ -679,4 +679,44 @@ Just copy the diagram and put it in parallel.
 3. Binary strings.
 
 ### 5.28
-Intuitively, Free(G) has functions of "all possible arities"... so what?
+Intuitively, Free(G) has functions of "all possible arities" and these are not subject to any extra equations, so we can build any port graph.
+
+### 5.32
+Trivial
+
+### 5.35
+Even in the free prop we should mod out the diagonal of $\mathrm{Expr}(G)\times \mathrm{Expr}(G)$. However, this is accomplished by imposing the axioms of a monoidal category, so I think both definitions are the same.
+
+### 5.41
+$M(i,j) = 1$ if $i=j$ and $0$ otherwise.
+
+### 5.43
+$(16x+4y, x+4y)$
+
+### 5.51
+$A+B=$$\begin{pmatrix}
+3 & 3 & 1 & 0 & 0 & 0 & 0 \\
+2 & 0 & 4 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 2 & 5 & 6 & 1
+\end{pmatrix}$
+
+### 5.55
+$\begin{pmatrix} 1 & 1 & 1 \end{pmatrix}$
+
+### 5.58
+I did it on paper - TODO w/ tikz
+
+### 5.59
+Let $M$ be an arbitrary $m$-by-$n$ matrix over a rig $R$ and let $x\in R^n$. The string diagram that implements $M$ consists of the following layers:
+1. First layer is $m-1$ applications of copy on each of the $n$ inputs - the exact details don't matter because associativity is strict.
+2. Second layer amplifies the $i$-th copy of the $j$-th input by $M_{ij}$ when this number is not zero and disard otherwise.
+3. Third layer is the morphism sending $(x_1, x_1,\dots, x_2, x_2,\dots) \mapsto (x_1, x_2,\dots, x_n, x_1, x_2)$. TODO: write this in terms of contiguous swaps.
+4. Fourth layer adds the wires in chunks of size $m$. Again, associativity guarantees that the details don't matter.
+
+### 5.62
+1. The only useful equation is $\times 0$ = discard and can be used in the first two diagrams.
+2. Direct application of that equation.
+
+### 5.63
+1. How do I prove there is no application of the equations in 5.60 that maps the 2nd diagram into the 1st one?
+2. Easy to see the resulting matrix ignores the first input and copies the second.
