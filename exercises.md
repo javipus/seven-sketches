@@ -720,3 +720,57 @@ Let $M$ be an arbitrary $m$-by-$n$ matrix over a rig $R$ and let $x\in R^n$. The
 ### 5.63
 1. How do I prove there is no application of the equations in 5.60 that maps the 2nd diagram into the 1st one?
 2. Easy to see the resulting matrix ignores the first input and copies the second.
+
+### 5.67
+1. Multiplication of real numbers is associative, and its "curried" unit is $\lambda x. 1$
+2. Addition of real numbers is associative, and its "curried" unit is $\lambda x. 0$
+
+### 5.69
+1. 
+   * $U(0) = R^0 = \{f\colon \{\} \to R\mid f\,\mathrm{function}\} \simeq \{\star\}$
+   * $U(m + n) = R^{m+n} = R^m \times R^n = U(m)\times U(n)$
+2. Follows from the fact that $U$ is a functor (so it preserves composition) and the fact that it preserves the monoidal product.
+3. The additive one since the monoidal product is $+$.
+
+### 5.77
+1. The behaviour of $+^{op}$ is $\mathrm{B}(+^{op}) = \{(x+y, (x,y)) \mid x,y \in R\} \subseteq R\times R^2$. Note that this is not a function but a relation, since addition is not injective, so for instance, if $R=\mathbb{N}$, $(+^{op})(3)$ would contain $(1,2)$ but also $(2,1)$, $(3,0)$ and $(0,3)$.
+2. The behaviour of $\Delta^{op}$ is $\mathrm{B}(\Delta^{op}) = \{((x,x),x)\mid x\in R\} \subseteq R^2\times R$. Note that this is not a total function but a partial function, because $\Delta$ is not surjective. It sends the diagonal of $R^2$ to $R$ canonically and is undefined elsewhere.
+
+### 5.80
+$B+C = B\sqcup C = (B\times \{1\})\cup (C\times \{2\})$
+
+### 5.82
+Follows immediately from the definition of composite behaviour:
+
+$
+\\ \mathrm{B}(g;h^{op}) =\\
+$
+$
+\{(x,z) \mid \exists y\in R^n \colon S(g)(x)=y\wedge y=S(h^{op})(z)\} =
+$
+$
+\\ \{(x,z)\in R^m\times R^l\mid S(g)(x)=S(h)(z)\}
+$
+
+### 5.83
+Similarly:
+
+$
+\\ \mathrm{B}(g^{op};h) =\\
+$
+$
+\{(x,z) \mid \exists y\in R^n \colon S(g^{op})(x)=y\wedge S(h)(y)=z\} =
+$
+$
+\\ \{(S(g)(y), S(h)(y)) \mid y \in R^m\}
+$
+
+### 5.84
+1. The diagram's behaviour defines the kernel: $\mathrm{B}(g;0^n) = \{x\in R^m \mid S(g)(x) = \vec{0}\in R^n \} \overset{\mathrm{def}}{=} \ker S(g)$
+2. Analogously, $\mathrm{B}((\mathrm{disc}^{op})^m; g) = \{z\in R^n \mid \exists x\in R^m\colon S(g)(x) = z \} \overset{\mathrm{def}}{=} \mathrm{im\,} S(g)$
+3. Follows from the fact that $S$ preserves the monoidal product $+$ and composition.
+
+### 5.85
+We write down the behaviour of the composite of two linear relations $B;C$ and note that, if $(x,z)\in \mathrm{B}(B;C)$, then:
+- so is $(rx, rz)$ for any $r\in R$ because there must be some $y$ such that $(rx,ry)\in B$ (by linearity of $B$) and $(ry,rz)\in C$ (by linearity of $C$); and
+- an analogous argument applies to addition.
