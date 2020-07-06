@@ -774,3 +774,30 @@ $
 We write down the behaviour of the composite of two linear relations $B;C$ and note that, if $(x,z)\in \mathrm{B}(B;C)$, then:
 - so is $(rx, rz)$ for any $r\in R$ because there must be some $y$ such that $(rx,ry)\in B$ (by linearity of $B$) and $(ry,rz)\in C$ (by linearity of $C$); and
 - an analogous argument applies to addition.
+
+## 6 Electric circuits:Hypergraph categories and operads
+
+### 6.3
+1. Discrete preorder.
+2. $a\leq b$.
+3. $a\leq b$ and $b\leq a$.
+
+### 6.6
+1. The initial object is $a$. There is just one morphism $1_a\colon a\to a$.
+2. The initial object is $a$, with unique morphisms $1_a\colon a \to a$, $f\colon a \to b$ and $f;g \colon a \to c$.
+3. There are zero morphisms between $a$ and $b$, so none can be an initial object.
+4. There is more than one morphism from $a$ to itself - the identity and the one pictured - so it can't be an initial object.
+
+### 6.7
+1. $f(1_R) = 1_S$ and $f(r_1 *_R r_2) = f(r_1) *_S f(r_2)$.
+2. By analogy [with rings](https://www.wikiwand.com/en/Category_of_rings#/limits_and_colimits), I think it should be $(\mathbb{N}, 0, +, 1, \cdot)$ because it's the "freest" rig.
+
+### 6.8
+The universal object property is in this case satisfied by the initial object. A comparable object is any other object candidate to be initial but such that there is a unique morphism from the initial object to it. In particular, any two initial objects are isomorphic.
+
+### 6.10
+Since $c_1$ is initial, there is a unique $!_1\colon c_1 \to c_2$. Analogously, there is a unique $!_2\colon c_2\to c_1$. The isomorphism is $!_1 !_2$ together with its inverse.
+
+### 6.13
+Replace arrows with $\leq$.
+
