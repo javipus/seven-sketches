@@ -73,70 +73,92 @@ class Quantale:
     def __init__(self, *args, **kwds):
         self._args = args
         self._kwds = kwds
-    def __leq__(self, other):pass
-    def __mult__(self, other): pass
+
+    # Preorder
+    def __eq__(self, other): raise NotImplementedError
+    def __ne__(self, other): return not self.__eq__(other)
+    def __le__(self, other): raise NotImplementedError
+    def __lt__(self, other): return self.__le__(other) and not self.__eq__(other)
+    def __ge__(self, other): return self._wrap(other).__le__(self)
+    def __gt__(self, other): return self.__ge__(other) and not self.__eq__(other)
+    
+    # Multiplication
+    def __mult__(self, other): raise NotImplementedError
+    def hom(self, other): raise NotImplementedError
     @property
-    def unit(self): pass
-    def hom(self): pass
-    def __repr__(self):
-        return 'Quantale {} {}'.format(self._args, self._kwds)
-    def __str__(self): return self.__repr__()
-class Cost(Quantale):
-
-    def __init__(self, x):
-        self.x = x
-
-    def __eq__(self, other):
-        return (self.x == self._wrap(other).x)
-
-    def __ne__(self, other):
-        return not self.__eq__(other)
-
-    def __lt__(self, other):
-        return (self.x < self._wrap(other).x)
-
-    def __gt__(self, other):
-        return not self.__leq__(other)
-
-    def __le__(self, other):
-        return self.__eq__(other) or self.__lt__(other)
-
-    def __ge__(self, other):
-        return self.__eq__(other) or self.__gt__(other)
-
-    def __mul__(self, other):
-        return Cost(self.x + self._wrap(other).x)
-
-    def __pow__(self, n):
-        return reduce(lambda x,y: x*y, [self.x]*n)
-
-    def __add__(self, other):
-        return self.join(other)
-
-    @property
-    def unit(self):
-        return Cost(np.inf)
-
-    @property
-    def zero(self):
-        return Cost(0)
-
-    def hom(self, other):
-        return Cost(self._wrap(other).x - self.x)
+    def unit(self): raise NotImplementedError
+    def __pow__(self, n : int): return reduce(lambda x,y: x*y, [self.x]*n)
+    
+    # Addition
+    def __add__(self, other): self.join(other)
+    @classmethod
+    def join(cls, *args):
+        return reduce(lambda x, y: x.join(y), map(cls, args))
 
     def join(self, other):
-        return Cost(min(self.x, self._wrap(other).x))
+        raise NotImplementedError
+    
+    @property
+    def zero(self): raise NotImplementedError
 
-    def _wrap(self, other):
-        if isinstance(other, Cost):
-            return other
-        return Cost(other)
-
+    # Printing
     def __repr__(self):
-        return 'Cost {}'.format(self.x)
-
+        return 'Quantale {} {}'.format(self._args, self._kwds)
+    
     def __str__(self):
         return self.__repr__()
+    
+    # Helpers
+    def _wrap(self, other):
+        if isinstance(other, self.__class__):
+            return other
+        return self.__class__(other)
+
+class Bool(Quantale):
+
+    def __init__(self, x : bool):
+        self._x = x
+
+    # Preorder
+    def __eq__(self, other): return self._x.__eq__(self._wrap(other)._x)
+    def __le__(self, other): return self._x.__le__(self._wrap(other)._x)
+
+    # Multiplication
+    def __mult__(self, other): return self._wrap(self._x and self._wrap(other)._x)
+    def hom(self, other): return self._wrap((not self._x) or self._wrap(other)._x)
+    @property
+    def unit(self): return self._wrap(True)
+
+    # Addition
+    def join(self, other): return self._wrap(self._x or self._wrap(other)._x)
+    @property
+    def zero(self): return self._wrap(False)
+
+    # Printing
+    def __repr__(self): return 'Bool {}'.format(self._x)
+
+class Cost(Quantale):
+
+    def __init__(self, x : np.float):
+        self._x = x
+
+    # Preorder
+    def __eq__(self, other): return self._x.__eq__(self._wrap(other)._x)
+    def __le__(self, other): return self._x.__le__(self._wrap(other)._x)
+
+    # Multiplication
+    def __mul__(self, other): return self._wrap(self._x + self._wrap(other)._x)
+    def hom(self, other): return self._wrap(self._wrap(other)._x - self._x)
+    @property
+    def unit(self): return self._wrap(np.inf)
+
+    # Addition
+    def join(self, other): return self._wrap(min(self._x, self._wrap(other)._x))
+    @property
+    def zero(self): return self._wrap(0)
+
+    # Printing
+    def __repr__(self): return 'Cost {}'.format(self._x)
 
     
 def one_step_distance_matrix(g):
