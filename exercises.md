@@ -801,3 +801,44 @@ Since $c_1$ is initial, there is a unique $!_1\colon c_1 \to c_2$. Analogously, 
 ### 6.13
 Replace arrows with $\leq$.
 
+### 6.16
+| $x$ | $[f,g](x)$ |
+| :--- | :--- |
+| apple1 | a |
+| banana1 | b |
+| pear1 | p |
+| cherry1 | c |
+| orange1 | o |
+| apple2 | e |
+| tomato2 | o |
+| mango2 | o |
+
+### 6.17
+1. Follows from the left commuting triangle in the definition of coproduct.
+2. Follows from the right commuting triangle in the definition of coproduct.
+3. Follows from the universal property of the coproduct applied to $\mathrm{cod} h$.
+4. From the definition of $[f,g]$ and the fact that (roughly) $i^2=i$.
+
+### 6.18
+1. Given morphisms $a \to_{f} b \to_{g} c$ and $a' \to_{f'} b' \to_{g'} c'$, we get $a+a' \to_{[f,f']} b+b' \to_{[g,g']} c+c'$.
+2. From the universal property of the coproduct, there is always a left inverse of the injection $i_A \colon A \to A + B$ as long as there is an arrow $g \colon B \to A$, since then we can do $[1_A, g] \colon A+B \to A$ and have $i_A; [1_A, g] = 1_A$. Since there is always a (unique) arrow from the initial object to any $A$, this left inverse exists. The other direction is even easier: because the triangle $\phi \to_{!} A+\phi \to_{f} A+\phi$ together with $phi \to_{!} A+\phi$ commutes for any $f$ (because of the universal property of the coproduct) and we have the same morphism on two sides (because of the universal property of the initial object) we have $! = !;f$ and hence $f=1_{A+\phi}$. The same arguments apply to $\phi+A$.
+3. Let $i_{i,X,C}$ be the injection of the object $X$ onto the $i$-th component of a coproduct $C$. Then we have
+   - TODO - tedious ugh
+   - The unique map from $A+B$ to $B+A$ is $[i_{2,A,A+B}, i_{1,B,A+B}]$.
+
+### 6.24
+1. Since there are no morphisms other than identities, the existence of pushouts is vacuously true.
+2. The singleton set for sure. And the empty set too, right?
+
+### 6.26
+Let $k_{n}$ denote the image of $k \in \underline{n}$ under the injection into $\underline{3} \sqcup \underline{5}$. Then the four equivalence classes in the pushout are:
+- $1_3 \sim 1_5 \sim 2_3$
+- $3_3 \sim 3_5 \sim 5_5$
+- $2_5$
+- $4_5$
+
+### 6.28
+1. Both arrows $f;i_X$ and $g;i_Y$ must equal the unique arrow $!\colon \phi \to X+Y$, so they're the same arrow.
+2. Because of the universal property of the coproduct.
+3. Because the morphisms $f$ and $g$, being unique, impose no restrictions on the commutativity of the pushout diagram and can be safely deleted.
+
