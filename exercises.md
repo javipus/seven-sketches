@@ -842,3 +842,33 @@ Let $k_{n}$ denote the image of $k \in \underline{n}$ under the injection into $
 2. Because of the universal property of the coproduct.
 3. Because the morphisms $f$ and $g$, being unique, impose no restrictions on the commutativity of the pushout diagram and can be safely deleted.
 
+### 6.35
+TODO: kinda tedious. Need to show uniqueness of arrows in the larger diagram from uniqueness in the smaller components.
+
+### 6.41
+Taking $J = X \leftarrow_{f} N \rightarrow_{g} Y$ and $D\colon J \to \mathrm{Set}$, we have $\mathrm{colim}_J D = \{(v,d)\mid v\in \{X, N, Y\},\,d\in D(v)\} / \sim$ with $(N, n) \sim (X, f(n)) \sim (Y, g(n))$ for all $n\in D(N)$, so this is just the disjoint union $DX \sqcup DN \sqcup DY$ quotiented by classes in $N$, as in example 6.25 - note that the element $DN$ "disappears" when quotienting by $\sim$.
+
+### 6.48
+In $\mathcal{C}$ it looks like $A \sqcup B \to_f N \sqcup P \leftarrow_g B \sqcup C$ and we draw $X \sqcup Y$ by stacking $X$ on top of $Y$.
+
+### 6.49
+Let $A \overset{f}{\rightarrow} N \overset{g}{\leftarrow} B$ and $A \overset{f'}{\rightarrow} P \overset{g'}{\leftarrow} C$ be cospans. To compose them, we do the following:
+- We construct the graph with nodes $A \sqcup N \sqcup B \sqcup P \sqcup C$ and edges given by the cospan arrows i.e. there is an edge between nodes $x$ and $y$ iff $y=h(x)$ or $x = h(y)$ for some $h\in \{f, g, f', g'\}$. We note that the resulting graph is 5-partite.
+- Then we take the subgraph with nodes $N \sqcup B \sqcup P$ and quotient it by connectivity, i.e. we replace each connected component in this subgraph by a single node. This amounts to calculating $N +_B P$. The resulting tripartite graph with nodes $A \sqcup N +_B P \sqcup C$ is the composition of the cospans.
+
+### 6.57
+1 is the same as 4 and 6 because they all have just one connected component. 3 is the same as 5 because both have two connected components with the same arities, $(1,2)$ and $(1,1)$. Finally, 2 is its own thing because there is no "information flow" from inputs to outputs.
+
+### 6.59
+1. $B$ because it has to coincide with the 3rd output wire of the composite.
+2. $D$ because it has to coincide with the 2nd output wire of $h$.
+3. $D$ because it's the 1st output wire of $h$.
+
+### 6.62
+I drew them. Trivial to draw, hard to describe.
+
+### 6.63
+[not super sure about this proof] We need to show that the pushout $P$ of $X \overset{1+1}{\leftarrow} X+X \overset{1+1}{\rightarrow} X$ is $X$. Since both morphisms in the span are the same, the commutative square says that both morphisms of type $X\to P$ are also the same. Call this morphism $i$. Moreover, by the universal property, any other morphism $i'\colon X \to P'$ must factorize uniquely through $P$. We note that this requirement is satisfied by taking $P=X$ and $i=1_X$. Since limits are defined only up to isomorphism (?), we're done.
+
+### 6.67
+We have a diagram that is identical to the one on the right-hand side of the Frobenius law, except for the unit in the lower input wire and the counit in the upper output wire. We use the Frobenius law to deform it into the (more symmetric) diagram in the middle of equation (6.53.1), and then we use unitality to get rid of the unit/counit wires.
