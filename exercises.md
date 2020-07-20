@@ -872,3 +872,39 @@ I drew them. Trivial to draw, hard to describe.
 
 ### 6.67
 We have a diagram that is identical to the one on the right-hand side of the Frobenius law, except for the unit in the lower input wire and the counit in the upper output wire. We use the Frobenius law to deform it into the (more symmetric) diagram in the middle of equation (6.53.1), and then we use unitality to get rid of the unit/counit wires.
+
+### 6.70
+Let $A\subseteq S$ and $B\subseteq T$. Then
+- $\phi_{S,T}; \mathrm{im}_{f\times g} (A, B) = \mathrm{im}_{f\times g} A\times B = \mathrm{im}_{f} A \times \mathrm{im}_g B$
+- $\mathrm{im}_{f} \times \mathrm{im}_{g}; \phi_{S',T'} (A, B) = \phi_{S',T'} (\mathrm{im}_{f} A, \mathrm{im}_{g} B) = \mathrm{im}_f A \times \mathrm{im}_g B$
+
+### 6.78
+A regular cospan category $\mathbf{Cospan}_{\mathcal{C}}$ is a decorated cospan category where all decorations are the same and trivial.
+
+### 6.79
+$V = \{1,2,3,4\}$, $C=\Omega\mathbb{R} \sqcup F \mathbb{R} \sqcup H \mathbb{R}$, and
+| $A$ | $s$ | $t$ | $\mathcal{l}$ |
+|---|---|---|---|
+| $a$ | 1 | 2 | $2\Omega$ |
+| $a'$ | 1 | 2 | $3F$ |
+| $b$ | 1 | 3 | $1\Omega$ |
+| $c$ | 2 | 4 | $1\Omega$ |
+| $d$ | 3 | 4 | $1H$ |
+
+### 6.80
+The circuit with the lightbulb and the resistor glued in series.
+
+### 6.82
+The circuit with the battery and the switch along separate, parallel wires.
+
+### 6.84
+$V=\{1,2\}$, $A=\{*\}$, $s(*)=1$, $t(*)=2$, $\mathcal{l}(*)=\mathrm{battery}$.
+
+### 6.86
+TODO - trivial but tedious
+
+### 6.88
+$\eta;x;\epsilon$ is built by identifying the loose end on the battery with the loose end on the lightbulb and the loose end on the switch with the loose end on the resistor.
+
+### 6.96
+TODO I really don't understand this construction
