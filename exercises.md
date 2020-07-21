@@ -908,3 +908,138 @@ $\eta;x;\epsilon$ is built by identifying the loose end on the battery with the 
 
 ### 6.96
 TODO I really don't understand this construction
+
+## Logic of behavior: Sheaves, toposes, and internal languages
+
+### 7.4
+Assume the square on the left is a pullback. Then
+
+$$
+AB; BB' = AA';A'B' \quad \text{(left square commutes)} \\
+AB; BB'; B'C' = AA'; A'B'; B'C' \quad \text{(compose with $B'C'$)} \\
+AB; BC; CC' = AA'; A'B'; B'C' \quad \text{(right square commutes)}
+$$
+
+so the large rectangle commutes. Moreover, the universal property for the left square implies the universal property for the large rectangle by composing the map to $B$ with $BC$.
+
+Conversely, if the large rectangle is a pullback, we have
+
+$$
+AB; BC; CC' = AA'; A'B'; B'C' \quad \text{(rectangle commutes)} \\
+AB; BB'; B'C' = AA'; A'B'; B'C' \quad \text{(right square commutes)} \\
+AB; BB' = AA'; A'B' \quad \text{(deleting $B'C'$)}
+$$
+
+so the left square commutes. Moreover, the universal property for the rectangle implies the universal proeprty for the left square since any map to $B$ yields a map to $C$ by composing with $BC$.
+
+### 7.6
+TODO
+
+### 7.7
+1. TODO
+2. Both maps from any other candidate object to $A$ have to be the same.
+
+### 7.8
+TODO
+
+### 7.9
+The surjection is $\underline{3}\to\underline{2}$ with $1\mapsto 1$, $2\mapsto 1$, and $3\mapsto 2$. The injection is $\underline{2} \to \underline{3}$ with $1\mapsto 2$ and $2\mapsto 3$.
+
+### 7.11
+TODO - key intuition is to work in bool, treat $\leq$ and $\multimap$ as implication
+
+### 7.16
+1. $[m](-5) = \mathrm{false}$
+2. $[m](0) = \mathrm{true}$
+
+### 7.17
+1. $[\mathrm{id}_{\mathbb{N}}](n) = \mathrm{true}\quad\forall n \in \mathbb{N}$
+2. $[\mathrm{!}_{\mathbb{N}}](n) = \mathrm{false}\quad\forall n \in \mathbb{N}$
+
+### 7.19
+1. $\neg$ is the characteristic function of a subobject of $\mathbb{B}$.
+2. $\mathrm{false} \colon 1 \to \mathbb{B}$ makes the pullback diagram of the subobject classifier commute, so that's it.
+
+### 7.20
+1. So
+
+| $P$ | $Q$ | $P\wedge Q$ | $P=(P\wedge Q)$ |
+|---|---|---|---|
+| T | T | T | T |
+| T | F | F | F |
+| F | T | F | T |
+| F | F | F | T |
+
+2. It's implication, yeah.
+3. 1st, 2nd and 4th columns of the table
+4. It classifies the morphisms in Bool seen as a preorder, i.e. the subobject
+$$
+\bigsqcup_{i,j\in\mathbb{B}} \mathrm{Set}(i,j) \to \mathbb{B\times B}\\
+(f \colon i \to j) \mapsto (i,j)
+$$
+
+### 7.21
+1. $[E](17) = \mathrm{false}$.
+2. $[P](17) = \mathrm{true}$.
+3. $[T](17) = \mathrm{true}$.
+4. 2 is the only number that's even and prime, then 10, and 11.
+
+### 7.27
+1. Open intervals $(x-\epsilon, x+\epsilon)$.
+2. Whenever $\forall x\in X$ there is an $\epsilon > 0$ such that $(x-\epsilon, x+\epsilon)\subseteq X$.
+3. $U_1 = (-1/2, 1)$, $U_2 = (-1, 1/2)$, $U=(-1,1)$.
+4. $U=(0,\infty)$ and $U_i = (0,i)$ for $i\in \mathbb{N}$.
+
+### 7.29
+1. yup
+2. obvious
+3. Let $f\colon X \to Y$. Given $B\subseteq Y$, its preimage $f^{-1}(B)$ is in $P(X)$ and since $\mathbf{Op}_{fine} = P(X)$, it's always open.
+
+### 7.31
+1. $\emptyset \subseteq \{1\} \subseteq X$.
+2. Each open $U\in \mathbf{Op}$ has essentially just one cover: $U$ itself. However, any family of open sets containing an arbitrary number of copies of the empty set and an arbitrary number of copies of $U$ is also a cover.
+
+### 7.32
+1. $B=X$.
+2. Everything carries over because topologies are closed under finite intersections.
+3. Assume $B\subseteq Y$ is open in $X$. Then $f^{-1}(B)$ is open in $Y$ because $B\cap Y = B$.
+
+### 7.34
+A category enriched on the preorder of open sets of a topological space $X$ has:
+- Hom-objects given by open sets of $X$. In particular, the hom-object of endomorphisms is $X$ for all objects.
+- The condition that $\mathcal{X}(x,y) \otimes \mathcal{X}(y,z) \leq \mathcal{X}(x,z)$ reads $(x\to y) \cap (y\to z) \subseteq (x\to z)$ which can be interpreted as "the morphisms from $x$ to $z$ contain the morphisms that can be formed by composition going through $y$, plus maybe some other stuff".
+- I wanna guess that $(x\to y) = X$ iff $x\simeq y$ but I don't know if it's true...
+
+### 7.38
+1. $\{a_1, a_2\}$
+2. $\{c_1\}$
+3. $\{\}$
+4. $f'(x)=f(x)$ if $x\neq b_3$ and $f'(b_3) = d$
+
+### 7.40
+1. $\mathrm{Sec}_f V_1 \simeq \times_{v\in V_1} f^{-1}(v) \simeq = 2\times 3 \times 1 \simeq 2 \times 3 \simeq 6$
+2. $\mathrm{Sec}_f V_2 \simeq \times_{v\in V_2} f^{-1}(v) \simeq = 2 \times 3 \times 1 \times 0 \simeq 0$
+3. $\mathrm{Sec}_f V_3 \simeq \times_{v\in V_3} f^{-1}(v) \simeq = 2 \times 3 \times 0 \times 2 \simeq 0$
+
+### 7.42
+1. $\mathrm{Sec}_f (\{a,b,c\}) = 2\times 3\times 1$ and $\mathrm{Sec}_f (\{a,c\}) = 2 \times 1$.
+2. The restriction is the projection $2 \times 3 \times 1 \to 2 \times 1$ that "forgets" the middle set $3$ i.e. it sends $(a,b,c)\mapsto (a,c)$.
+
+### 7.44
+1. Any pair of sections such that $s_1(b) \neq s_2(b)$ e.g. $s_1(b)=b_1$ and $s_2(b)=b_2$.
+2. No, because they yield a contradiction on $b$.
+3. Same as the previous ones but sending $h_1(b) = h_2(b) = b_1$.
+4. Yes, defining $h(y) = h_1(y)$ if $y\in U_1$ and $h(y) = h_2(y)$ if $y\in U_2$.
+
+### 7.47
+A sheaf on $M$ assigns a set to every open set $U\subseteq M$, subject to gluing conditions. A vector field is a section, and the tangent bundle is a sheaf. Other bundles (fiber bundles, principal bundles) would be examples of different sheaves on $M$.
+
+### 7.49
+1. $\{\} \to \{1\} \to \{1,2\}$
+2. A functor $P$ sending each of the 3 open sets in $\mathbf{Op}_1$ to a set and each of the arrows in $\mathbf{Op}^{op}$ to a function between sets.
+3. From exercise 7.31 we know that the only covers of an open $U$ in this topology are of the form $(U,\dots,U,\{\},\dots,\{\})$ so any matching family of sections would need to satisfy:
+   1. $s_i|_{\emptyset} = s_j|_{\emptyset}$
+   2. $s_i|_{U} = s_j|_{U}$
+
+    The first condition is always satisfied since we know from example 7.36 we know that $P(\{\}) = 1$. The second condition says essentially that any matching family must contain essentially just one section $s$, so obviously there is a unique gluing which is $s$ itself. TL;DR: since this topology only has trivial covers the sheaf condition is trivially satisfied.
+4. Since the arrow $\{1\} \to \{\}$ in $\mathbf{Op}^{op}$ must go to the unique arrow to the terminal object in set, and the sheaf condition is trivially satsified, the only data needed to specify the sheaf is the function $P(\{1,2\}) \to P(\{1\})$.
