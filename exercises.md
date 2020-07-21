@@ -1043,3 +1043,43 @@ A sheaf on $M$ assigns a set to every open set $U\subseteq M$, subject to gluing
 
     The first condition is always satisfied since we know from example 7.36 we know that $P(\{\}) = 1$. The second condition says essentially that any matching family must contain essentially just one section $s$, so obviously there is a unique gluing which is $s$ itself. TL;DR: since this topology only has trivial covers the sheaf condition is trivially satisfied.
 4. Since the arrow $\{1\} \to \{\}$ in $\mathbf{Op}^{op}$ must go to the unique arrow to the terminal object in set, and the sheaf condition is trivially satsified, the only data needed to specify the sheaf is the function $P(\{1,2\}) \to P(\{1\})$.
+
+### 7.52
+The set of open subsets of $\{1\}$ is $\{\{\}, \{1\} \} \simeq \{\textrm{false}, \textrm{true}\} = \mathbb{B}$.
+
+### 7.53
+1. Follows from the fact that finite intersection of open sets is associative.
+2. I think so?
+
+### 7.55
+- On vertices: 
+  - $[H](A) = V$
+  - $[H](B) = V$ 
+  - $[H](C) = 0$
+- On arrows:
+  - $[H](f) = (V,V;A)$
+  - $[H](g) = (V,V;0)$
+  - $[H](h) = (V,0;0)$
+  - $[H](i) = (0,0;0)$
+
+### 7.59
+1. The empty set.
+2. $\mathbb{R}$.
+3. Yes.
+4. No.
+
+### 7.60
+1. $X$
+2. Yes
+3. Empty
+4. Yes - the second one does vacuously
+
+### 7.62
+"People who like the weather"
+
+### 7.64
+TODO - finish this
+
+Let $X=\mathbb{R}$ with its usual topology and let $S$ assign to each open set $U\subseteq \mathbb{R}$ the space of polynomial functions on $U$ of the form $f(x)=x^n$ for some $n\in\mathbb{N}$. Then $p(x) = (f(x) > 0)$ and q ??? - is this a good example?
+
+### 
